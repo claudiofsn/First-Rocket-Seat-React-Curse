@@ -1,9 +1,39 @@
 import { Post } from './components/Post';
 import { Header } from './components/Header';
 import { Sidebar } from './components/Sidebar';
-
 import './global.css';
 import styles from './App.module.css';
+
+const posts = [
+  {
+    id: 1,
+    author: {
+      avatarUrl: "https://github.com/claudiofsn.png",
+      name: "Cláudio Neto",
+      role: "TI @ Alcans Telecom"
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'jane.design/doctorcare' }
+    ],
+    publishedAt: new Date('2023-05-03 20:00:00')
+  },
+  {
+    id: 2,
+    author: {
+      avatarUrl: "https://github.com/gazevedorp.png",
+      name: "Gabriel Azevedo",
+      role: "Dev @ Alcans Telecom"
+    },
+    content: [
+      { type: 'paragraph', content: 'Fala galeraa 👋' },
+      { type: 'paragraph', content: 'Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀' },
+      { type: 'link', content: 'jane.design/doctorcare' }
+    ],
+    publishedAt: new Date('2023-05-10 20:00:00')
+  },
+]
 
 export function App() {
   return (
@@ -12,14 +42,15 @@ export function App() {
       <div className={styles.wrapper}>
         <Sidebar />
         <main>
-          <Post
-            author="Claudio Neto"
-            content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-          />
-          <Post
-            author="Pedro Augusto"
-            content="Um novo post aqui."
-          />
+          {posts.map(post => (
+            <Post
+              key={post.id}
+              author={post.author}
+              content={post.content}
+              publishedAt={post.publishedAt}
+            />
+          )
+          )}
         </main>
       </div>
     </div>
