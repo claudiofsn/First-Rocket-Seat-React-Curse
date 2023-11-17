@@ -1,4 +1,5 @@
-## Parei na aula: Componente: Avatar
+## Parei na aula: Aplicando responsividade
+
 
 
 
