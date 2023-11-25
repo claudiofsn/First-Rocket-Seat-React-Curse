@@ -33,4 +33,3 @@ Se por algum motivo você alterar o os items de lugar no array, o react entender
 Isso significa que os valores não sofrem mutação (como adição ou subtração), para alterar o valor de um estado você deve passar qual será o novo valor dele.
 
 Parei na aula: Validando formulário
-
